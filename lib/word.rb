@@ -1,15 +1,19 @@
 class Word
   @@word_list = []
+  # @@definition_list = []
   attr_accessor :word
+  # :definition
   attr_reader :id
 
   def initialize(attributes)
     @word = attributes.fetch("word")
+    # @definition = attributes.fetch("definition")
     @id = @@word_list.length + 1
   end
 
   def self.all
     @@word_list
+    # @@definition_list
   end
 
   def add_word
@@ -28,5 +32,13 @@ class Word
       end
     end
   end
+
+  def self.sort()
+    @@word_list.sort_by { |word| word.word}
+  end
+
+  # def add_definition
+  #   @@definition_list.push(self)
+  # end
 
 end #Word class

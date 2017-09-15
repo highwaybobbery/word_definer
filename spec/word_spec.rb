@@ -35,4 +35,33 @@ describe("Word") do
     end
   end
 
+  describe('.find') do
+    it('returns a word with a specific id') do
+      word = Word.new({"word" => "continent"})
+      word.add_word()
+      expect(Word.find(1)).to(eq(word))
+    end
+  end
+
+  describe('.sort') do
+    it('puts the list in alphabetical order') do
+      word1 = Word.new({"word" => "country"})
+      word1.add_word()
+      word2 = Word.new({"word" => "delta"})
+      word2.add_word()
+      word3 = Word.new({"word" => "continent"})
+      word3.add_word()
+      expect(Word.sort()).to(eq([word3, word1, word2]))
+    end
+  end
+
+  # describe('#add_definition') do
+  #   it("adds a definition to a word") do
+  #     word = Word.new({"word" => "continent","definition" => "one of the seven main landmasses on the Earth"})
+  #     word.add_word()
+  #     word.add_definition()
+  #     expect(Word.all()).to(eq(word))
+  #   end
+  # end
+
 end #Word class

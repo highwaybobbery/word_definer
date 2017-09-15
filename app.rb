@@ -16,9 +16,11 @@ end
 
 post('/') do
   word = params["word"]
-  word_info = {"word" => word, }
-  word = Word.new(word_info)
-  word.add_word()
+  # definition = params["definition"]
+  word_info = {"word" => word}
+  #  "definition" => definition
+  new_word = Word.new(word_info)
+  new_word.add_word()
   @word_list = Word.all()
   erb(:list)
 end
