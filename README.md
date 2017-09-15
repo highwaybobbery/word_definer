@@ -10,9 +10,9 @@ _{This is a detailed description of your application. Its purpose and usage.  Gi
 
 ## Specs
 
-* _Behavior:_
-* _Input:_
-* _Output:_
+* _Behavior: Save a word to the word list._
+* _Input: Continent_
+* _Output: Word list: continent_
 
 ## Setup/Installation Requirements
 
