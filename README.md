@@ -6,11 +6,11 @@
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This application allows children to create their own dictionary with words and multiple definitions._
 
 ## Specs
 
-* _Behavior: Save a word to the word list._
+* _Behavior: Save a word and definition to the word list._
 * _Input: Continent_
 * _Output: Word list: continent_
 
