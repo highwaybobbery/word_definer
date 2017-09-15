@@ -9,9 +9,10 @@ describe("Word") do
   end
 
   describe('My word list', {:type => :feature}) do
-    it ('processes the user entry and returns a list of words') do
+    it ('processes the user entry and returns a list of words and definitions') do
       visit('/')
       fill_in('word', :with => 'continent')
+      fill_in('definition', :with => 'one of the seven main landmasses on the Earth')
       click_button('Add word!')
       expect(page).to have_content('continent')
     end

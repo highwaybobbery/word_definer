@@ -16,9 +16,8 @@ end
 
 post('/') do
   word = params["word"]
-  # definition = params["definition"]
-  word_info = {"word" => word}
-  #  "definition" => definition
+  definition = params["definition"]
+  word_info = {"word" => word, "definition" => definition}
   new_word = Word.new(word_info)
   new_word.add_word()
   @word_list = Word.all()
