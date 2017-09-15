@@ -10,9 +10,13 @@ _This application allows children to create their own dictionary with words and 
 
 ## Specs
 
-* _Behavior: Save a word and definition to the word list._
+* _Behavior: Save a word to the word list._
 * _Input: Continent_
 * _Output: Word list: continent_
+
+* _Behavior: Save and view multiple definitions for each word_
+* _Input: One of the seven main landmasses on the Earth, a large landmass on another planet_
+* _Output: Word page: Continent - One of the seven main landmasses on the Earth, a large landmass on another planet _
 
 ## Setup/Installation Requirements
 

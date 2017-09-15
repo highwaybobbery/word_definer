@@ -22,6 +22,6 @@ post('/') do
   word_info = {"word" => word, "definition" => definition, "def2" => def2, "def3" => def3}
   new_word = Word.new(word_info)
   new_word.add_word()
-  @word_list = Word.all()
+  @word_list = Word.sort()
   erb(:list)
 end
