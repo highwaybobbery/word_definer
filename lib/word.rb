@@ -19,4 +19,14 @@ class Word
   def self.clear()
     @@word_list = []
   end
-end
+
+  def self.find(id)
+    word_id = id.to_i()
+    @@word_list.each do |word|
+      if word.id == word_id
+        return word
+      end
+    end
+  end
+
+end #Word class
