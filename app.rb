@@ -5,7 +5,7 @@ require('./lib/word')
 require('pry')
 
 get('/') do
-  @list = Word.all()
+  @word_list = Word.all()
   erb(:list)
 end
 
@@ -15,10 +15,10 @@ get('/word/:id') do
 end
 
 post('/') do
-  first_name = params["word"]
+  word = params["word"]
   word_info = {"word" => word, }
   word = Word.new(word_info)
   word.add_word()
-  @list = Word.all()
+  @word_list = Word.all()
   erb(:list)
 end
