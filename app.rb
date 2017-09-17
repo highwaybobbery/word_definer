@@ -16,10 +16,8 @@ end
 
 post('/') do
   word = params["word"]
-  definition = params["definition"]
-  def2 = params["def2"]
-  def3 = params["def3"]
-  word_info = {"word" => word, "definition" => definition, "def2" => def2, "def3" => def3}
+  definitions = params["definitions"]
+  word_info = { "word" => word, "definitions" => definitions }
   new_word = Word.new(word_info)
   new_word.add_word()
   @word_list = Word.sort()

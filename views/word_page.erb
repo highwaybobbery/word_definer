@@ -1,6 +1,6 @@
 <h1><%= @word.word %></h1>
-<h3><%= @word.definition %></h3>
-<h3><%= @word.def2 %></h3>
-<h3><%= @word.def3 %></h3>
+<% @word.definitions.each do |definition| %>
+<h3><%= definition %></h3>
+<% end %>
 
 <a href="/">Back to list</a>
