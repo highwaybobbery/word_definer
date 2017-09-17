@@ -23,11 +23,7 @@ class Word
 
   def self.find(id)
     word_id = id.to_i()
-    @@word_list.each do |word|
-      if word.id == word_id
-        return word
-      end
-    end
+    @@word_list.find { |word| word.id == word_id }
   end
 
   def self.sort()
