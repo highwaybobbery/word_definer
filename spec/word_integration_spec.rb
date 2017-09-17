@@ -12,7 +12,7 @@ describe("Word") do
     before do
       visit('/')
       add_word(
-        word: 'continent',
+        term: 'continent',
         definitions: [
           'one of the seven main landmasses on the Earth',
           'a large landmass on another planet',
@@ -31,7 +31,7 @@ describe("Word") do
     before do
       visit('/')
       add_word(
-        word: 'continent',
+        term: 'continent',
       )
       click_button('Add word!')
       click_link("continent")
@@ -46,7 +46,7 @@ describe("Word") do
     before do
       visit('/')
       add_word(
-        word: 'continent',
+        term: 'continent',
         definitions: [
           'one of the seven main landmasses on the Earth',
           'a large landmass on another planet',
@@ -64,8 +64,8 @@ describe("Word") do
     end
   end
 
-  def add_word(word:, definitions: [])
-    fill_in('word', with: word)
+  def add_word(term:, definitions: [])
+    fill_in('term', with: term)
     fill_in('definition_1', with: definitions[0])
     fill_in('definition_2', with: definitions[1])
     fill_in('definition_3', with: definitions[2])

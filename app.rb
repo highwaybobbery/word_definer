@@ -15,9 +15,9 @@ get('/word/:id') do
 end
 
 post('/') do
-  word = params["word"]
+  term = params["term"]
   definitions = params["definitions"]
-  word_info = { "word" => word, "definitions" => definitions }
+  word_info = { "term" => term, "definitions" => definitions }
   new_word = Word.new(word_info)
   new_word.add_word()
   @word_list = Word.sort()
