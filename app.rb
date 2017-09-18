@@ -1,8 +1,12 @@
-require('sinatra')
-require('sinatra/reloader')
+require 'sinatra'
+require 'sinatra/reloader'
 also_reload('lib/**/*.rb')
-require('./lib/word')
-require('pry')
+require './lib/db_connection'
+require './lib/word'
+require 'pry'
+require 'pg'
+
+DB = DbConnection.connection
 
 get('/') do
   @word_list = Word.all()

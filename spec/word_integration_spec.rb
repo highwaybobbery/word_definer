@@ -1,5 +1,4 @@
-require('capybara/rspec')
-require('./app')
+require 'integration_spec_helper'
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 

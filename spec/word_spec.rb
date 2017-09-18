@@ -1,11 +1,10 @@
-require('rspec')
-require('pry')
-require('word')
+require 'spec_helper'
+require 'word'
 
 describe("Word") do
   before() do
-      Word.clear()
-    end
+    Word.clear()
+  end
 
   describe('#word') do
     it('saves a value in word') do
