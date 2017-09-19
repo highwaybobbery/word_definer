@@ -3,7 +3,6 @@ require 'sinatra/reloader'
 also_reload('lib/**/*.rb')
 require './lib/db_connection'
 require './lib/word'
-require 'pry'
 require 'pg'
 
 DB = DbConnection.connection
@@ -20,10 +19,8 @@ end
 
 post('/') do
   term = params["term"]
-  definitions = params["definitions"]
-  word_info = { "term" => term, "definitions" => definitions }
-  new_word = Word.new(word_info)
-  new_word.add_word()
+  # definitions = params["definitions"]
+  new_word = Word.new(term: term).save
   @word_list = Word.sort()
   erb(:list)
 end

@@ -1,6 +1,5 @@
 ENV['RACK_ENV'] = 'test'
 require 'rspec'
-require 'pry'
 require 'db_connection'
 
 db_connection = DbConnection.connection

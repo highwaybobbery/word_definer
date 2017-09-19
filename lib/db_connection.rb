@@ -1,6 +1,6 @@
 require 'pg'
-
 class DbConnection
+
   attr_reader :db
   DB_NAME = 'word_definer'
 
@@ -15,6 +15,11 @@ class DbConnection
 
   def self.connection
     @@connections[ENV['RACK_ENV']] ||= self.new
+  end
+
+  def select(sql)
+    result = exec(sql)
+    self.class.symbolize(result)
   end
 
   def exec(sql)
@@ -40,4 +45,13 @@ class DbConnection
     exec 'create table if not exists words (id serial primary key, term varchar);'
     exec 'create table if not exists definitions (id serial primary key, word_id int, content varchar);'
   end
+
+  private
+
+  def self.symbolize(result)
+    result.map do |row|
+      row.each_with_object({}) { |(k,v), h| h[k.to_sym] = v }
+    end
+  end
+
 end
