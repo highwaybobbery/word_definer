@@ -29,7 +29,6 @@ describe Word do
     end
   end
 
-
   describe('#initialize') do
     it 'sets the term' do
       word = Word.new(term: 'continent')
@@ -53,4 +52,12 @@ describe Word do
     end
   end
 
-end #Word class
+  describe("definitions") do
+    it('returns the definitions from the database') do
+      word = Word.new(term: 'continent').save
+      definition1 = Definition.new(text: 'is big', word_id: word.id).save
+      definition2 = Definition.new(text: 'real big', word_id: word.id).save
+      expect(word.definitions.map(&:text)).to eq(['is big', 'real big'])
+    end
+  end
+end

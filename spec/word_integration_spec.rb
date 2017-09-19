@@ -52,7 +52,7 @@ describe("Word") do
       click_link("continent")
     end
 
-    xit ('displays multiple definitions if entered') do
+    it ('displays multiple definitions if entered') do
       expect(page).to have_content('continent')
       expect(page).to have_content('Europe')
       expect(page).to have_content('landmass')

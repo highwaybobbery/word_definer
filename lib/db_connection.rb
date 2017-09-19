@@ -43,7 +43,7 @@ class DbConnection
 
   def create_tables
     exec 'create table if not exists words (id serial primary key, term varchar);'
-    exec 'create table if not exists definitions (id serial primary key, word_id int, content varchar);'
+    exec 'create table if not exists definitions (id serial primary key, word_id int, text varchar);'
   end
 
   private
@@ -53,5 +53,4 @@ class DbConnection
       row.each_with_object({}) { |(k,v), h| h[k.to_sym] = v }
     end
   end
-
 end

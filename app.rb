@@ -1,11 +1,7 @@
 require 'sinatra'
-require 'sinatra/reloader'
-also_reload('lib/**/*.rb')
-require './lib/db_connection'
 require './lib/word'
+require './lib/definition'
 require 'pg'
-
-DB = DbConnection.connection
 
 get('/') do
   @word_list = Word.all()
@@ -19,8 +15,12 @@ end
 
 post('/') do
   term = params["term"]
-  # definitions = params["definitions"]
+  definitions = params["definitions"]
   new_word = Word.new(term: term).save
+  definitions.each do |definition|
+    Definition.new(text: definition, word_id: new_word.id).save unless definition.empty?
+  end
+
   @word_list = Word.sort()
   erb(:list)
 end
