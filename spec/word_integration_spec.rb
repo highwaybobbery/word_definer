@@ -17,8 +17,11 @@ describe("Word") do
       click_button('Add word!')
     end
 
-    it ('processes the user entry and returns a list of words') do
+    it ('processes the user entry and shows the word with definitions') do
       expect(page).to have_content('continent')
+      expect(page).to have_content('one of the seven main landmasses on the Earth')
+      expect(page).to have_content('a large landmass on another planet')
+      expect(page).to have_content('the mainland of Europe')
     end
   end
 
@@ -29,7 +32,6 @@ describe("Word") do
         term: 'continent',
       )
       click_button('Add word!')
-      click_link("continent")
     end
 
     it ('navigates to an individual word page') do
@@ -49,7 +51,6 @@ describe("Word") do
         ],
       )
       click_button('Add word!')
-      click_link("continent")
     end
 
     it ('displays multiple definitions if entered') do

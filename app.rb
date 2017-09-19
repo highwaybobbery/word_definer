@@ -21,6 +21,5 @@ post('/') do
     Definition.new(text: definition, word_id: new_word.id).save unless definition.empty?
   end
 
-  @word_list = Word.sort()
-  erb(:list)
+  redirect("/word/#{new_word.id}")
 end
